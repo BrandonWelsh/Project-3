@@ -2,6 +2,11 @@ import streamlit as st
 from transformers import pipeline
 import requests
 from PIL import Image
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Load the sentiment analysis pipeline
 sentiment_pipeline = pipeline("sentiment-analysis")
@@ -35,7 +40,6 @@ def main():
         else:
             st.write('Please enter a tweet.')
 
-
 # Function to generate image using DALL-E
 def generate_image(text):
     # Prepare request data
@@ -44,13 +48,13 @@ def generate_image(text):
         "max_tokens": 50  # Adjust the max_tokens parameter as needed
     }
 
-    # Set OpenAI API key
-    api_key = "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"  # Replace with your OpenAI API key
+    # Get OpenAI API key from environment variables
+    api_key = os.getenv("OPENAI_API_KEY")
 
     # Send request to DALL-E endpoint
     response = requests.post(dalle_endpoint, json=data, headers={"Authorization": f"Bearer {api_key}"})
 
-    # Extract image URL from response
+    # Extract image data from response
     image_data = response.json()["choices"][0]["text"]
 
     # Convert image data to PIL image

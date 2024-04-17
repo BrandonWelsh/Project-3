@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 
 # Load the sentiment analysis pipeline
-sentiment_pipeline = pipeline("sentiment-analysis", model="cardiffnlp/twitter-roberta-base-sentiment-latest")
+sentiment_pipeline = pipeline("sentiment-analysis")
 
 # Main function to define the Streamlit app
 def main():

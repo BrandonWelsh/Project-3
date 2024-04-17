@@ -44,19 +44,19 @@ def generate_image(text):
     }
 
     # Set OpenAI API key
-    api_key = "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" 
+    api_key = "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"  # Replace with your OpenAI API key
 
     # Send request to DALL-E endpoint
     response = requests.post(dalle_endpoint, json=data, headers={"Authorization": f"Bearer {api_key}"})
 
-    # Extract image URL from response
-    image_url = response.json()["choices"][0]["prompt"]
+    # Extract image data from response
+    image_data = response.json()["choices"][0]["text"]
 
-    # Download the generated image
-    image_response = requests.get(image_url)
-    image = Image.open(BytesIO(image_response.content))
+    # Convert image data to PIL image
+    image = Image.open(BytesIO(image_data.encode()))
 
     return image
+
 
 # Call the main function to run the Streamlit app
 if __name__ == '__main__':

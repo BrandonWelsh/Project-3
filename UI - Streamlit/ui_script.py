@@ -4,6 +4,7 @@ import requests
 from PIL import Image
 import os
 from dotenv import load_dotenv
+from io import BytesIO  # Import BytesIO for handling image data conversion
 
 # Load environment variables from .env file
 load_dotenv()
@@ -33,10 +34,12 @@ def main():
             st.write('Sentiment:', result[0]['label'], '(Confidence:', result[0]['score'], ')')
 
             # Generate an image based on the content of the tweet
-            generated_image = generate_image(tweet)
-
-            # Display the generated image
-            st.image(generated_image, caption='Generated Image', use_column_width=True)
+            try:
+                generated_image = generate_image(tweet)
+                # Display the generated image
+                st.image(generated_image, caption='Generated Image', use_column_width=True)
+            except Exception as e:
+                st.error(f"Error generating image: {e}")
         else:
             st.write('Please enter a tweet.')
 
@@ -54,8 +57,18 @@ def generate_image(text):
     # Send request to DALL-E endpoint
     response = requests.post(dalle_endpoint, json=data, headers={"Authorization": f"Bearer {api_key}"})
 
+    # Check if request was successful
+    if response.status_code != 200:
+        raise Exception(f"Error: Failed to generate image. Status code: {response.status_code}")
+
     # Extract image data from response
-    image_data = response.json()["choices"][0]["text"]
+    choices = response.json().get("choices", [])
+    if not choices:
+        raise Exception("Error: 'choices' not found in response.")
+    
+    image_data = choices[0].get("text")
+    if not image_data:
+        raise Exception("Error: Image data not found in response.")
 
     # Convert image data to PIL image
     image = Image.open(BytesIO(image_data.encode()))

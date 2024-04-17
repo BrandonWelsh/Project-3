@@ -35,6 +35,7 @@ def main():
         else:
             st.write('Please enter a tweet.')
 
+
 # Function to generate image using DALL-E
 def generate_image(text):
     # Prepare request data
@@ -49,7 +50,7 @@ def generate_image(text):
     # Send request to DALL-E endpoint
     response = requests.post(dalle_endpoint, json=data, headers={"Authorization": f"Bearer {api_key}"})
 
-    # Extract image data from response
+    # Extract image URL from response
     image_data = response.json()["choices"][0]["text"]
 
     # Convert image data to PIL image

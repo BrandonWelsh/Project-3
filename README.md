@@ -1,4 +1,5 @@
-# Project 3, Group 4
+# Tweet Sentiment Analysis and Image Generation
+### Project 3, Group 4
 - Brandon Welsh
 - Joe Timmons
 - Omar Hassanein
@@ -8,26 +9,63 @@ April 2024
 
 Due date: April 22nd, 2024
 
+## Overview
+
+This Streamlit application performs sentiment analysis on user-provided tweets and generates corresponding images based on the sentiment of the tweets. It utilizes OpenAI's DALL-E for image generation and Hugging Face's Transformers library for sentiment analysis. Moreover, we created an addiotnal ML model to allow the user to have more than one opinon for their tweet's sentiment analysis. The streamlit app displays both results and an image generated. 
+
+
 ## Program Goals
 The goal of our project is to produce a neural network trained on Twitter sentiment analysis data, which is capable of reading the content of a tweet provided to it and recognize the sentiment of that tweet as being either positive, neutral, or negative. It is able to accept user input for this tweet in a Streamlit interface, and display the rating of the tweet. Additionally, work was performed to develop an AI which could read the content of the tweet and provide an emoji which is most closely related to the content of the tweet, defaulting to a simple smile, frown, or neutral face (based on the sentiment score of the tweet) if it could not determine a suitable emoji.
 
-## Data Source
-Tweet data source: https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset
+## Features
 
-Streamlit UI: https://streamlit.io/ [USE GRADIO IF WE CAN'T GET STREAMLIT TO WORK]
+- Analyze sentiment of tweets using Transformers pipeline.
+Analysis sentiment of tweets based on a ML model developed inhouse by our team
+- Generate images based on the sentiment using OpenAI's DALL-E.
+- User-friendly interface built with Streamlit.
+- Secure input handling with password input for API key.
+- 
+
+## Data Source
+- [Tweet data source](https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset)
+
+## Technology used in the app
+
+- [Transformers Sentiment Analysis Pipeline](https://github.com/BrandonWelsh/Project-3.git): Utilized for sentiment analysis of tweets.
+
+- [Streamlit](https://streamlit.io/): Used for building the user interface.
+
+- [DALL-E 3](https://openai.com/dall-e-3): OpenAI's model used for image generation.
+
+
 
 ## Dependencies/Setup Instructions
 NOTE: Complete this part of the write-up AFTER the program is complete and all dependencies are accounted for
 
 Pip install all required libraries before running the following cell.
 
-Run the following cell in the juptyer notebook:
-  Import BLANK as BLANK
-  Import BLANK as BLANK
-  etc...
+## Dependencies/Setup Instructions
+NOTE: Complete this part of the write-up AFTER the program is complete and all dependencies are accounted for
 
-## How to use
-TODO
+Pip install all required libraries before running the following cell.
+```
+$ git clone https://github.com/BrandonWelsh/Project-3.git
+$ cd yourproject
+pip install streamlit as st
+pip install transformers
+pip install os
+pip install openai
+pip install base 64
+```
+
+## Usage
+
+1. Set up your OpenAI API Key:
+2. Run the Streamlit app in your browser at `http://localhost:8501 or by command prompt streamlit run https://raw.githubusercontent.com/BrandonWelsh/Project-3/main/UI_Streamlit/ui_script.py
+
+3. use your OPENAI_API_KEY on the Streamlit app
+4. Enter your tweet and follow the in app instructions. 
+
 
 ## Team Member Responsibilities
 Brandon Welsh: Performed research on the image recognition portion of the project before pivoting that over to create an emoji bot based on the sentiment of the tweet. [I will add more to this]

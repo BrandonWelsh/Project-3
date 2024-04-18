@@ -61,7 +61,7 @@ pip install base 64
 ## Usage
 
 1. Set up your OpenAI API Key:
-2. Run the Streamlit app in your browser at `http://localhost:8501 or by command prompt streamlit run https://raw.githubusercontent.com/BrandonWelsh/Project-3/main/UI_Streamlit/ui_script.py
+2. Run the Streamlit app in your browser at `http://localhost:8501 or by command prompt ```streamlit run https://raw.githubusercontent.com/BrandonWelsh/Project-3/main/UI_Streamlit/ui_script.py```
 
 3. use your OPENAI_API_KEY on the Streamlit app
 4. Enter your tweet and follow the in app instructions. 

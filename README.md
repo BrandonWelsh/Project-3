@@ -32,7 +32,7 @@ TODO
 ## Team Member Responsibilities
 Brandon Welsh: Performed research on the image recognition portion of the project before pivoting that over to create an emoji bot based on the sentiment of the tweet. [I will add more to this]
 
-Joe Timmons:
+Joe Timmons: Preso outline & design. Readme to Preso Content Reconciliation.
 
 Omar Hassanein:
 

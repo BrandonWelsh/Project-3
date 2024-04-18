@@ -41,7 +41,7 @@ Raymond Conley:
 ## Team Member Analysis
 Brandon Welsh: My interpretation of the results of this project is... [2-3 paragraphs per person]
 
-Joe Timmons: 
+Joe Timmons: Our project successfully developed a neural network capable of analyzing the sentiment of user-inputted tweets and classifying them as positive, neutral, or negative within a Streamlit interface. While the original plan to compare text-based and image-based sentiment analysis using AI-generated visuals proved too complex given the available data and project scope, the completed sentiment analysis tool represent meaningful achievements in line with our revised project goals.
 
 Omar Hassanein: 
 

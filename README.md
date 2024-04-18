@@ -22,7 +22,8 @@ Due date: April 22nd 2024
 
 ## Team Member Responsibilities
 
-
+Joe- Preso outline & design. 
+     Readme to Preso Content Reconciliation 
 ## Team Member Analysis
 
 

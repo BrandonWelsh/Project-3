@@ -25,13 +25,20 @@ def main():
     if st.button('Analyze Sentiment & Generate Image'):
         if tweet:
             result = sentiment_pipeline(tweet)
-            st.write('Sentiment:', result[0]['label'], 'Confidence:', result[0]['score'])
+            st.write('Sentiment from Transformer:', result[0]['label'], 'Confidence:', result[0]['score'])
+            
 
+            generated_prediction = generate_prediction_bert(tweet)  
+            st.write('Sentiment from Bert Model:', generated_prediction) #'Confidence:', result[0]['score'])
+                
+            
             generated_image = generate_image(tweet, user_api_key)
             if generated_image:
                 st.image(generated_image, caption='Generated Image', use_column_width=True)
             else:
                 st.write("Failed to generate image. Please check the input and API settings.")
+                
+            
         else:
             st.write('Please enter a tweet.')
 
@@ -54,6 +61,17 @@ def generate_image(text, user_api_key):
 
     # Return the URL (you can also download the image and return it as bytes)
     return image_url
+
+
+
+#define function to call for the Bert model 
+def generate_prediction_bert(text):
+
+    #load the safetensors file and run the model to get the sentiment
+    
+    prediction = "TEST"  #get predictiopn from model
+    #returnt the prediction
+    return prediction
 
 if __name__ == '__main__':
     main()

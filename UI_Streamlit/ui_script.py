@@ -87,7 +87,7 @@ def generate_prediction_bert(text):
 
 def generate_prediction(text):
     # Load the model from the pickle file
-    with open('your_model.pkl', 'rb') as f:
+    with open('../model_directory/sentiment_model.pkl', 'rb') as f:
         model = pickle.load(f)
     
     # Make predictions
@@ -95,10 +95,6 @@ def generate_prediction(text):
     
     return prediction
 
-# Example usage
-text = "This is a test tweet."
-prediction = generate_prediction_bert(text)
-print(prediction)
 
 
 if __name__ == '__main__':

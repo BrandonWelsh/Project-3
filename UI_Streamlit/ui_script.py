@@ -3,6 +3,7 @@ from transformers import pipeline
 import os
 import openai
 import base64
+import pickle
 
 # Load environment variables from apikey.env file
 from dotenv import load_dotenv
@@ -64,14 +65,41 @@ def generate_image(text, user_api_key):
 
 
 
-#define function to call for the Bert model 
+#define function to call for our model 
 def generate_prediction_bert(text):
 
-    #load the safetensors file and run the model to get the sentiment
+    
+    
+    #tokenize the tweet
+    #tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')  #needs revision
+    #load the model file and run the model to get the sentiment
+    
+    #predict from the model
+    
+    #return the prediction
     
     prediction = "TEST"  #get predictiopn from model
-    #returnt the prediction
+    
     return prediction
+
+
+
+
+def generate_prediction(text):
+    # Load the model from the pickle file
+    with open('your_model.pkl', 'rb') as f:
+        model = pickle.load(f)
+    
+    # Make predictions
+    prediction = model.predict(text)  # Adjust this line based on how your model makes predictions
+    
+    return prediction
+
+# Example usage
+text = "This is a test tweet."
+prediction = generate_prediction_bert(text)
+print(prediction)
+
 
 if __name__ == '__main__':
     main()

@@ -60,10 +60,8 @@ Pip install all required libraries before running the following cell:
     from keras.preprocessing.sequence import pad_sequences
     from catboost import CatBoostClassifier
 
-## Dependencies/Setup Instructions
-NOTE: Complete this part of the write-up AFTER the program is complete and all dependencies are accounted for
-
-Pip install all required libraries before running the following cell.
+## Dependencies/Setup Instructions (continued)
+Pip install all required libraries before running the following cell:
 ```
 $ git clone https://github.com/BrandonWelsh/Project-3.git
 $ cd yourproject

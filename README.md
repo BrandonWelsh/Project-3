@@ -40,9 +40,25 @@ Analysis sentiment of tweets based on a ML model developed inhouse by our team
 
 
 ## Dependencies/Setup Instructions
-NOTE: Complete this part of the write-up AFTER the program is complete and all dependencies are accounted for
+Pip install all required libraries before running the following cell:
 
-Pip install all required libraries before running the following cell.
+    import pandas as pd
+    import numpy as np
+    import joblib
+    import matplotlib.pyplot as plt
+    from transformers import AutoTokenizer
+    from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+    from sklearn.model_selection import train_test_split
+    from sklearn.feature_extraction.text import CountVectorizer
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.svm import SVC
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn.naive_bayes import GaussianNB
+    from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+    from keras.preprocessing.sequence import pad_sequences
+    from catboost import CatBoostClassifier
 
 ## Dependencies/Setup Instructions
 NOTE: Complete this part of the write-up AFTER the program is complete and all dependencies are accounted for

@@ -82,7 +82,7 @@ pip install base 64
 
 
 ## Team Member Responsibilities
-Brandon Welsh: Performed research on the image recognition portion of the project before pivoting that over to developing the model pipeline code contained in SentimentModelNEW.ipynb. Much of my effort was dedicated towards getting the tweet data we had found tokenized and prepared for use in a model selection pipeline. I also spent a lot of time debugging issues with the SentimentModelNEW until it could finally be used to select an optimal prediction model for use alongside the HuggingFace sentiment analysis Transformer in the Streamlit. 
+Brandon Welsh: Performed research on the image recognition portion of the project before pivoting that over to developing the model pipeline code contained in SentimentModelNEW.ipynb. Much of my effort was dedicated towards getting the tweet data we had found tokenized and prepared for use in a model selection pipeline. Before that, a bulk of my time was spent researching image recognition before determining it would be far out of scope for our project, soon pivoting to developing a transformer trained on the tweet data. This transformer was soon deemed overkill, and so we again pivoted over to utilizing a classifier model selection pipeline utilized in Joe and Omar's project 2. This model selection pipeline finally ended up going into the final project. I also spent a lot of time debugging issues with the SentimentModelNEW until it could finally be used to select an optimal prediction model for use alongside the HuggingFace sentiment analysis Transformer in the Streamlit. 
 
 Joe Timmons: Preso outline & design. Readme to Preso Content Reconciliation.
 
@@ -102,7 +102,7 @@ Raymond Conley:
 ## Resources Utilized
 TODO, KEEP ADDING TO THIS
 
-Python, Jupyter Notebooks, Streamlit
+Python, Jupyter Notebooks, Streamlit, HuggingFace Transformers
 
 ## Bugs
 I (Brandon) struggled to get the KNN n_neighbors selection code to run on my machine. It kept throwing this error: AttributeError: 'NoneType' object has no attribute 'split'. I sent the code to Raymond and he was able to run it without issue, so it was likely due to an outdated library that I couldn't quite pin down. Luckily this was a very minor part of the code and did not affect my progress on the rest of the SentimentModelNEW file. 

@@ -20,7 +20,7 @@ The goal of our project is to produce a neural network trained on Twitter sentim
 ## Features
 
 - Analyze sentiment of tweets using Transformers pipeline.
-Analysis sentiment of tweets based on a ML model developed inhouse by our team
+- Analysis sentiment of tweets based on a ML model developed inhouse by our team
 - Generate images based on the sentiment using OpenAI's DALL-E.
 - User-friendly interface built with Streamlit.
 - Secure input handling with password input for API key.
@@ -36,8 +36,6 @@ Analysis sentiment of tweets based on a ML model developed inhouse by our team
 - [Streamlit](https://streamlit.io/): Used for building the user interface.
 
 - [DALL-E 3](https://openai.com/dall-e-3): OpenAI's model used for image generation.
-
-
 
 ## Dependencies/Setup Instructions
 Pip install all required libraries before running the following cell:
@@ -76,13 +74,12 @@ pip install base 64
 
 1. Set up your OpenAI API Key:
 2. Run the Streamlit app in your browser at `http://localhost:8501 or by command prompt ```streamlit run https://raw.githubusercontent.com/BrandonWelsh/Project-3/main/UI_Streamlit/ui_script.py```
-
-3. use your OPENAI_API_KEY on the Streamlit app
+3. use your OPENAI_API_KEY on the Streamlit app (not required to get the sentiment of the tweet, but is required to generate an image of it)
 4. Enter your tweet and follow the in app instructions. 
 
 
 ## Team Member Responsibilities
-Brandon Welsh: Performed research on the image recognition portion of the project before pivoting that over to create an emoji bot based on the sentiment of the tweet. [I will add more to this]
+Brandon Welsh: Performed research on the image recognition portion of the project before pivoting that over to developing the model pipeline code contained in SentimentModelNEW.ipynb.
 
 Joe Timmons: Preso outline & design. Readme to Preso Content Reconciliation.
 
@@ -102,7 +99,7 @@ Raymond Conley:
 ## Resources Utilized
 TODO, KEEP ADDING TO THIS
 
-Python, Jupyter Notebooks
+Python, Jupyter Notebooks, Streamlit
 
 ## Bugs
 TODO, LIST BUGS AS THEY SHOW UP

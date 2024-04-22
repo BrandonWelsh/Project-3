@@ -29,15 +29,18 @@ def main():
             st.write('Sentiment from Transformer:', result[0]['label'], 'Confidence:', result[0]['score'])
             
 
-            generated_prediction = generate_prediction_bert(tweet)  
-            st.write('Sentiment from Bert Model:', generated_prediction) #'Confidence:', result[0]['score'])
+            #generated_prediction = generate_prediction_bert(tweet)  
+            #st.write('Sentiment from Bert Model:', generated_prediction) #'Confidence:', result[0]['score'])
+            
+            generated_prediction_our_model = generate_prediction(tweet)  
+            st.write('Sentiment from Our Model:', generated_prediction_our_model) #'Confidence:', result[0]['score'])
                 
             
-            generated_image = generate_image(tweet, user_api_key)
-            if generated_image:
-                st.image(generated_image, caption='Generated Image', use_column_width=True)
-            else:
-                st.write("Failed to generate image. Please check the input and API settings.")
+            # generated_image = generate_image(tweet, user_api_key)
+            # if generated_image:
+            #     st.image(generated_image, caption='Generated Image', use_column_width=True)
+            # else:
+            #     st.write("Failed to generate image. Please check the input and API settings.")
                 
             
         else:
@@ -85,17 +88,25 @@ def generate_prediction_bert(text):
 
 
 
+
+
 def generate_prediction(text):
-    # Load the model from the pickle file
-    with open('../model_directory/sentiment_model.pkl', 'rb') as f:
-        model = pickle.load(f)
-    
-    # Make predictions
-    prediction = model.predict(text)  # Adjust this line based on how your model makes predictions
-    
-    return prediction
-
-
+    try:
+        # Load the model from the pickle file
+        with open('../model_directory/sentiment_model.pk1', 'rb') as f:
+            model = pickle.load(f)
+        
+        print("Model loaded successfully")
+        
+        # Make predictions
+        prediction = model.predict(text)  # Adjust this line based on how your model makes predictions
+        
+        print("Prediction:", prediction)
+        
+        return prediction
+    except Exception as e:
+        print("Error during prediction:", e)
+        return None
 
 if __name__ == '__main__':
     main()

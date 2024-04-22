@@ -102,7 +102,7 @@ Raymond Conley: This AI Bootcamp project capably demonstrates a comprehensive ap
 ## Resources Utilized
 TODO, KEEP ADDING TO THIS
 
-Python, Jupyter Notebooks, Streamlit, HuggingFace Transformers
+Python, Jupyter Notebooks, Streamlit, HuggingFace Transformers, Microsoft Copilot, ChatGPT
 
 ## Bugs
 I (Brandon) struggled to get the KNN n_neighbors selection code to run on my machine. It kept throwing this error: AttributeError: 'NoneType' object has no attribute 'split'. I sent the code to Raymond and he was able to run it without issue, so it was likely due to an outdated library that I couldn't quite pin down. Luckily this was a very minor part of the code and did not affect my progress on the rest of the SentimentModelNEW file. 
